@@ -4922,6 +4922,26 @@ $text['description-device_key_label']['ru-ru'] = "Введите метку.";
 $text['description-device_key_label']['sv-se'] = "Fyll i beteckning.";
 $text['description-device_key_label']['uk-ua'] = "";
 
+$text['description-device_key_icon']['en-us'] = "Enter the icon name.";
+$text['description-device_key_icon']['ar-eg'] = "";
+$text['description-device_key_icon']['de-at'] = "";
+$text['description-device_key_icon']['de-ch'] = "";
+$text['description-device_key_icon']['de-de'] = "";
+$text['description-device_key_icon']['es-cl'] = "";
+$text['description-device_key_icon']['es-mx'] = "";
+$text['description-device_key_icon']['fr-ca'] = "";
+$text['description-device_key_icon']['fr-fr'] = "";
+$text['description-device_key_icon']['he-il'] = "";
+$text['description-device_key_icon']['it-it'] = "";
+$text['description-device_key_icon']['nl-nl'] = "";
+$text['description-device_key_icon']['pl-pl'] = "";
+$text['description-device_key_icon']['pt-br'] = "";
+$text['description-device_key_icon']['pt-pt'] = "";
+$text['description-device_key_icon']['ro-ro'] = "";
+$text['description-device_key_icon']['ru-ru'] = "";
+$text['description-device_key_icon']['sv-se'] = "";
+$text['description-device_key_icon']['uk-ua'] = "";
+
 $text['description-device_key_extension']['en-us'] = "Enter the extension.";
 $text['description-device_key_extension']['ar-eg'] = "";
 $text['description-device_key_extension']['de-at'] = "Geben Sie die Nebenstelle ein."; //copied from de-de
