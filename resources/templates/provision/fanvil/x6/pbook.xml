@@ -1,27 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PhoneBook>
-<DirectoryEntry>
-<Name>Jane Doe</Name>
-<Telephone>3131</Telephone>
-<Mobile>5555551234</Mobile>
-<Other>112233</Other>
-<Ring>Default</Ring>
-<Group></Group>
-</DirectoryEntry>
-<DirectoryEntry>
-<Name>John Doe</Name>
-<Telephone>3134</Telephone>
-<Mobile>5555556789</Mobile>
-<Other>1234</Other>
-<Ring>Default</Ring>
-<Group>Company</Group>
-</DirectoryEntry>
-<DirectoryEntry>
-<Name>Papa Johns</Name>
-<Telephone>(xxx) xxx-xxxx</Telephone>
-<Mobile></Mobile>
-<Other></Other>
-<Ring>Default</Ring>
-<Group>Food</Group>
-</DirectoryEntry>
+{foreach $contacts as $row}
+{if $smarty.get.contacts == "users" && $row.category == "users"}
+	<DirectoryEntry>
+	{if $row.contact_name_given != ""}
+		<Name>{$row.contact_name_given} {$row.contact_name_family}</Name>
+	{else}
+		<Name>{$row.effective_caller_id_name}</Name>
+	{/if}
+
+	{foreach $row.numbers as $number}
+		{if $number.phone_number != ""}
+			<Telephone>{$number.phone_number}</Telephone>
+		{else}		
+			<Telephone>{$number.phone_extension}</Telephone>
+		{/if}
+	{/foreach}
+        <Mobile></Mobile>
+        <Other></Other>
+        <Ring>Default</Ring>
+        <Group>Users</Group>
+	</DirectoryEntry>
+{elseif $smarty.get.contacts == "groups" && $row.category == "groups"}
+	<DirectoryEntry>
+	{if $row.contact_name_given != ""}
+		<Name>{$row.contact_name_given} {$row.contact_name_family}</Name>
+	{else}
+		<Name>{$row.effective_caller_id_name}</Name>
+	{/if}
+	
+	{foreach $row.numbers as $number}
+		{if $number.phone_number != ""}
+			<Telephone>{$number.phone_number}</Telephone>
+		{else}		
+			<Telephone>{$number.phone_extension}</Telephone>
+		{/if}
+	{/foreach}
+        <Mobile></Mobile>
+        <Other></Other>
+        <Ring>Default</Ring>
+        <Group>Groups</Group>
+	</DirectoryEntry>
+{elseif $smarty.get.contacts == "extensions" && $row.category == "extensions"}
+	<DirectoryEntry>
+	{if $row.contact_name_given != ""}
+		<Name>{$row.contact_name_given} {$row.contact_name_family}</Name>
+	{else}
+		<Name>{$row.effective_caller_id_name}</Name>
+	{/if}
+	{if $row.phone_number != ""}
+		<Telephone>{$row.phone_number}</Telephone>
+	{else}
+		<Telephone>{$row.phone_extension}</Telephone>
+	{/if}
+        <Mobile></Mobile>
+        <Other></Other>
+        <Ring>Default</Ring>
+        <Group>Extensions</Group>
+	</DirectoryEntry>
+{elseif $smarty.get.contacts == "all"}
+	<DirectoryEntry>
+	{if $row.contact_name_given != ""}
+		<Name>{$row.contact_name_given} {$row.contact_name_family}</Name>
+	{else}
+		<Name>{$row.effective_caller_id_name}</Name>
+	{/if}
+	
+	{if $row.category == "extensions"}
+		{if $row.phone_number != ""}
+			<Telephone>{$row.phone_number}</Telephone>
+		{else}
+			<Telephone>{$row.phone_extension}</Telephone>
+		{/if}
+	{else}
+	{foreach $row.numbers as $number}
+		{if $number.phone_number != ""}
+			<Telephone>{$number.phone_number}</Telephone>
+		{else}		
+			<Telephone>{$number.phone_extension}</Telephone>
+		{/if}
+	{/foreach}
+	{/if}
+        <Mobile></Mobile>
+        <Other></Other>
+        <Ring>Default</Ring>
+	</DirectoryEntry>
+{/if}
+{/foreach}
 </PhoneBook>
