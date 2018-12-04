@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PhoneBook>
+<DirectoryEntry>
+<Name>Jane Doe</Name>
+<Telephone>3131</Telephone>
+<Mobile>5555551234</Mobile>
+<Other>112233</Other>
+<Ring>Default</Ring>
+<Group></Group>
+</DirectoryEntry>
+<DirectoryEntry>
+<Name>John Doe</Name>
+<Telephone>3134</Telephone>
+<Mobile>5555556789</Mobile>
+<Other>1234</Other>
+<Ring>Default</Ring>
+<Group>Company</Group>
+</DirectoryEntry>
+<DirectoryEntry>
+<Name>Papa Johns</Name>
+<Telephone>(xxx) xxx-xxxx</Telephone>
+<Mobile></Mobile>
+<Other></Other>
+<Ring>Default</Ring>
+<Group>Food</Group>
+</DirectoryEntry>
+</PhoneBook>
